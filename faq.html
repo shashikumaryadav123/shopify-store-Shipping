@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care | ZenSpace</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .template-page {
+            max-width: 800px;
+            margin: 150px auto 100px;
+            padding: 0 5%;
+        }
+
+        .template-page h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .content-block {
+            margin-bottom: 3rem;
+        }
+
+        .content-block h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .content-block p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ZENSPACE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#featured">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html" style="color: var(--accent-color);">Help</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html" class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Shop All</a>
+        </div>
+    </header>
+
+    <main class="template-page">
+        <!-- FAQ Content (Visible on faq.html) -->
+        <div id="faq-content">
+            <h1>Frequently Asked Questions</h1>
+            
+            <div class="faq-item">
+                <div class="faq-question">What are your meditation mats made of? <span>+</span></div>
+                <div class="faq-answer">Our Premium Sage Mats are made from 100% natural tree rubber and a vegan polyurethane top layer. They are PVC-free and biodegradable.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you ship internationally? <span>+</span></div>
+                <div class="faq-answer">Yes, we currently ship to North America, Europe, Australia, and select parts of Asia. Shipping rates are calculated at checkout.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I clean my journal? <span>+</span></div>
+                <div class="faq-answer">The linen cover is treated to be water-resistant. Simply wipe with a damp, lint-free cloth. Do not use harsh chemicals.</div>
+            </div>
+        </div>
+
+        <!-- Shipping & Returns (Visible on shipping.html) -->
+        <div id="shipping-content" style="margin-top: 5rem;">
+            <h2>Shipping & Returns</h2>
+            <div class="content-block">
+                <h3>Processing Times</h3>
+                <p>All orders are processed within 1-2 business days. Orders are not shipped or delivered on weekends or holidays.</p>
+            </div>
+            <div class="content-block">
+                <h3>Our Return Policy</h3>
+                <p>We have a 30-day return policy, which means you have 30 days after receiving your item to request a return. To be eligible for a return, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #eee;">
+        &copy; 2024 ZenSpace Inc. | <a href="#" style="color: #888;">Privacy Policy</a> | <a href="#" style="color: #888;">Terms of Service</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | ZenSpace</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            height: 60vh;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            color: white;
+            max-width: 800px;
+        }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            padding: 120px 10%;
+        }
+
+        .story-image {
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            padding: 100px 10%;
+            background-color: #FDFCF8;
+            text-align: center;
+        }
+
+        .mission-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .instagram-cta {
+          padding: 100px 10%;
+          text-align: center;
+          background: #F4F7F2;
+        }
+
+        @media (max-width: 992px) {
+            .story-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ZENSPACE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#featured">Featured</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="about.html" style="color: var(--accent-color);">About</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html" class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">To the Shop</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>Born from a moment of silence.</h1>
+        </section>
+
+        <section class="story-section">
+            <div class="story-content">
+                <span style="color: var(--accent-color); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Our Origin</span>
+                <h2 style="font-size: 3rem; margin: 1.5rem 0;">A Space for Growth</h2>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">ZenSpace wasn't built in a boardroom. It was built in the early hours of dawn, in those quiet moments before the world wakes up. We realized that finding peace in a busy world isn't about escaping—it's about creating a literal space where peace is inevitable.</p>
+                <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">Our products are designed to be physical anchors. Whether it's the texture of our sage mats or the grounding scent of our terracotta candles, every detail is chosen to bring you back to your center.</p>
+            </div>
+            <div class="story-image" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/zenspace_hero_banner_1774115018140.png');"></div>
+        </section>
+
+        <section class="mission-grid">
+            <div class="mission-item">
+                <h3>01. Sustainable</h3>
+                <p>We work exclusively with biodegradable rubber and soy-based waxes to ensure our legacy is one of health, not waste.</p>
+            </div>
+            <div class="mission-item">
+                <h3>02. Mindful</h3>
+                <p>Every product is tested by meditation practitioners to ensure it meets the needs of a real practice.</p>
+            </div>
+            <div class="mission-item">
+                <h3>03. Communal</h3>
+                <p>A portion of every sale goes to mental health charities that provide mindfulness training in underserved schools.</p>
+            </div>
+        </section>
+
+        <section class="instagram-cta">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Join the Mindful Movement</h2>
+            <p style="margin-bottom: 3rem;">Follow our journey and share your space with #ZenSpaceHome</p>
+            <div class="cta-button" style="padding: 1rem 3rem;">Follow Us @ZenSpace</div>
+        </section>
+    </main>
+
+    <footer style="background-color: #2D362F; color: white; padding: 60px 10%; text-align: center;">
+        <span class="logo" style="color: white; display: block; margin-bottom: 1.5rem;">ZENSPACE</span>
+        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">&copy; 2024 ZenSpace Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

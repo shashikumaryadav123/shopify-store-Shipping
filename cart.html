@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | ZenSpace</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-page {
+            max-width: 1000px;
+            margin: 150px auto 100px;
+            padding: 0 5%;
+        }
+
+        .cart-title {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .cart-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 4rem;
+        }
+
+        .summary-card {
+            background-color: #FDFCF8;
+            padding: 2.5rem;
+            border-radius: 20px;
+            height: fit-content;
+            border: 1px solid #eee;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .total-row {
+            border-top: 2px solid var(--secondary-color);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .cart-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ZENSPACE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#featured">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">Help</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="cart.html" class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Cart (<span class="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <h1 class="cart-title">Your Cart</h1>
+        
+        <div class="cart-container">
+            <!-- Items Section -->
+            <div id="cart-items">
+                <!-- Cart items injected by JS -->
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary-card">
+                <h2 style="margin-bottom: 2rem;">Order Summary</h2>
+                
+                <!-- Discount Code -->
+                <div style="margin-bottom: 2.5rem;">
+                    <label style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #888; display: block; margin-bottom: 0.5rem;">Discount Code</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="discount-code" placeholder="Try 'ZEN10'" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                        <button onclick="applyDiscount()" class="cta-button" style="padding: 0.8rem 1.5rem; white-space: nowrap;">Apply</button>
+                    </div>
+                    <p id="discount-msg" style="font-size: 0.8rem; margin-top: 0.5rem;"></p>
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <div id="discount-row" class="summary-row" style="display: none; color: #BC7455;">
+                    <span>Discount (10%)</span>
+                    <span id="discount-amount">-$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span style="color: #10B981;">FREE</span>
+                </div>
+                <div class="total-row">
+                    <span>Total</span>
+                    <span id="cart-total-final">$0.00</span>
+                </div>
+                
+                <p style="font-size: 0.8rem; color: #888; margin-top: 2rem; margin-bottom: 2.5rem; text-align: center;">
+                    Taxes calculated at checkout.
+                </p>
+
+                <button class="cta-button" onclick="window.location.href='index.html'; alert('Thank you for your order! Checkout simulation complete.')" style="width: 100%; padding: 1.5rem;">Secure Checkout</button>
+                
+                <!-- Bundle Upsell -->
+                <div style="margin-top: 3rem; background: white; border: 1px dashed var(--secondary-color); padding: 1.5rem; border-radius: 12px;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 1rem;">Complete Your Ritual</h4>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <div style="width: 50px; height: 50px; background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/wellness_journal_product_1774115084520.png'); background-size: cover; border-radius: 6px;"></div>
+                        <div style="flex: 1;">
+                            <p style="font-size: 0.8rem; font-weight: 600; margin: 0;">Guided Wellness Journal</p>
+                            <p style="font-size: 0.8rem; color: var(--secondary-color); margin: 0;">$28.00 USD</p>
+                        </div>
+                        <button onclick="addToCart({id: 'journal-001', name: 'Guided Wellness Journal', price: 28, image: 'file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/wellness_journal_product_1774115084520.png'})" style="background: var(--secondary-color); color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.7rem; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" height="20" alt="Visa">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" height="20" alt="Mastercard">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="20" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #eee;">
+        &copy; 2024 ZenSpace Inc.
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+      let currentDiscount = 0;
+
+      function applyDiscount() {
+        const code = document.getElementById('discount-code').value.trim().toUpperCase();
+        const msg = document.getElementById('discount-msg');
+        const discountRow = document.getElementById('discount-row');
+        
+        if (code === 'ZEN10') {
+            currentDiscount = 0.10;
+            msg.textContent = 'Discount applied successfully!';
+            msg.style.color = '#10B981';
+            discountRow.style.display = 'flex';
+        } else {
+            currentDiscount = 0;
+            msg.textContent = 'Invalid discount code.';
+            msg.style.color = '#EF4444';
+            discountRow.style.display = 'none';
+        }
+        renderCartWithDiscount();
+      }
+
+      function renderCartWithDiscount() {
+        // We override renderCart's total calculation logic
+        const subtotalText = document.getElementById('cart-total').textContent;
+        const subtotal = parseFloat(subtotalText.replace('$', ''));
+        
+        const discountAmount = subtotal * currentDiscount;
+        document.getElementById('discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
+        
+        const finalTotal = subtotal - discountAmount;
+        document.getElementById('cart-total-final').textContent = `$${finalTotal.toFixed(2)}`;
+      }
+
+      // Hook into the same observer to handle dynamic updates
+      const observer = new MutationObserver(() => {
+        renderCartWithDiscount();
+      });
+      observer.observe(document.getElementById('cart-total'), { childList: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Sage Mat | ZenSpace</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Step into your sanctuary with the ZenSpace Premium Sage Meditation Mat. High-density, eco-friendly rubber for the perfect balance of comfort and grip.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-page {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 120px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnail-strip {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--btn-transition);
+        }
+
+        .thumbnail.active {
+            border-color: var(--accent-color);
+        }
+
+        .product-details h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            color: #FACC15;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        .variants {
+            margin-bottom: 2.5rem;
+        }
+
+        .variant-label {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: var(--btn-transition);
+        }
+
+        .swatch.active {
+            border-color: var(--text-dark);
+            transform: scale(1.1);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .buy-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .accordion {
+            border-top: 1px solid #eee;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        /* Sticky Add to Cart Bar */
+        .sticky-bar {
+            position: fixed;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: bottom 0.3s ease-in-out;
+            visibility: hidden;
+        }
+
+        .sticky-bar.visible {
+            bottom: 0;
+            visibility: visible;
+        }
+
+        .sticky-product-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .sticky-product-thumb {
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-bar .buy-buttons { display: none; }
+            .product-page { gap: 2rem; }
+            .main-image { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo">ZENSPACE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#featured">Featured</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="cart.html" class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Cart (<span class="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- Sticky Bar -->
+    <div id="sticky-bar" class="sticky-bar">
+        <div class="sticky-product-info">
+            <div class="sticky-product-thumb" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png');"></div>
+            <div>
+                <h4 style="margin: 0;">Premium Sage Mat</h4>
+                <p style="margin: 0; color: var(--secondary-color); font-weight: 700;">$89.00 USD</p>
+            </div>
+        </div>
+        <button class="cta-button" onclick="addToCart({id: 'mat-001', name: 'Premium Sage Mat', price: 89, image: 'file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png'})">Add to Cart</button>
+    </div>
+
+    <main>
+        <section style="padding-top: 150px;">
+            <div class="product-page">
+                <!-- Image Gallery -->
+                <div class="product-gallery">
+                    <div id="main-image-preview" class="main-image" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png');"></div>
+                    <div class="thumbnail-strip">
+                        <div class="thumbnail active" onclick="switchImage(this, 'file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png')" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png');"></div>
+                        <!-- More dynamic thumbnails could go here -->
+                        <div class="thumbnail" onclick="switchImage(this, 'file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/zenspace_hero_banner_1774115018140.png')" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/zenspace_hero_banner_1774115018140.png');"></div>
+                    </div>
+                </div>
+
+                <!-- Product Content -->
+                <div class="product-details">
+                    <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: #888;">
+                        <a href="index.html" style="color: #888; text-decoration: none;">Shop</a> / 
+                        <a href="#" style="color: #888; text-decoration: none;">Mats</a> / 
+                        Premium Sage Mat
+                    </nav>
+
+                    <h1>Premium Sage Mat</h1>
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <span style="color: #888; font-size: 0.9rem;">(48 Reviews)</span>
+                    </div>
+
+                    <p class="price">$89.00 USD</p>
+
+                    <p style="margin-bottom: 2.5rem; color: var(--text-muted); font-size: 1.1rem;">
+                        **Step into your sanctuary.** Most meditation mats are either too thin or too slippery. The ZenSpace Premium Sage Mat solves both. Crafted from high-density, eco-friendly rubber, it provides the perfect balance of joint support and grip.
+                    </p>
+
+                    <div class="variants">
+                        <span class="variant-label">Color: Sage Green</span>
+                        <div class="color-swatches">
+                            <div class="swatch active" style="background-color: #7A8C82;"></div>
+                            <div class="swatch" style="background-color: #D2B48C;"></div>
+                            <div class="swatch" style="background-color: #BC7455;"></div>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <span class="variant-label" style="margin-bottom: 0;">Quantity:</span>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.5rem;">
+                            <button class="qty-btn" style="border: none;">-</button>
+                            <span style="min-width: 30px; text-align: center;">1</span>
+                            <button class="qty-btn" style="border: none;">+</button>
+                        </div>
+                    </div>
+
+                    <div class="buy-buttons">
+                        <button class="cta-button" onclick="addToCart({id: 'mat-001', name: 'Premium Sage Mat', price: 89, image: 'file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/meditation_mat_product_1774115040544.png'})" style="width: 100%; padding: 1.2rem;">Add to Cart</button>
+                        <button class="cta-button secondary-button" style="width: 100%; padding: 1.2rem; background-color: #2D362F; color: white; border: none;">Buy It Now</button>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div style="display: flex; gap: 2rem; margin-bottom: 3rem; background: #FDFCF8; border: 1px solid #eee; padding: 1.5rem; border-radius: 12px;">
+                        <div style="text-align: center; flex: 1;">
+                            <span style="font-size: 1.5rem; display: block;">🚚</span>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Free Shipping</span>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                            <span style="font-size: 1.5rem; display: block;">🛡️</span>
+                            <span style="font-size: 0.8rem; font-weight: 600;">2-Year Warranty</span>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                            <span style="font-size: 1.5rem; display: block;">🔄</span>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Easy Returns</span>
+                        </div>
+                    </div>
+
+                    <!-- Details Accordion -->
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Features & Benefits
+                                <span>+</span>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Materials & Care
+                                <span>+</span>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Shipping & Returns
+                                <span>+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upsell Section -->
+        <section style="background-color: #F4F7F2;">
+            <div class="section-header">
+                <h2>Goes Well With...</h2>
+            </div>
+            <div class="grid">
+                 <div class="product-card">
+                    <div class="product-image" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/ceramic_candle_product_1774115064465.png');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ember & Oak Candle</h3>
+                        <p class="product-price">$34.00 USD</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('file:///C:/Users/shash/.gemini/antigravity/brain/15119283-4979-407e-92ad-9e39866594dd/wellness_journal_product_1774115084520.png');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Guided Wellness Journal</h3>
+                        <p class="product-price">$28.00 USD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section (Judge.me style) -->
+        <section id="reviews" style="padding: 100px 10%;">
+            <div class="section-header">
+                <h2>Customer Reviews</h2>
+                <div style="font-size: 1.5rem; color: #FACC15; margin-bottom: 0.5rem;">★★★★★</div>
+                <p>Based on 48 reviews</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="border-bottom: 1px solid #eee; padding: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-weight: 700;">Sarah J.</span>
+                        <span style="color: #888;">March 15, 2024</span>
+                    </div>
+                    <div style="color: #FACC15; margin-bottom: 1rem;">★★★★★</div>
+                    <h4 style="margin-bottom: 0.5rem;">The quality is unmatched!</h4>
+                    <p style="color: var(--text-muted);">I've tried dozens of mats, but this is the first one that doesn't slip on my hardwood floors. The sage color is even more beautiful in person.</p>
+                </div>
+                
+                <div style="border-bottom: 1px solid #eee; padding: 2rem 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-weight: 700;">Marcus D.</span>
+                        <span style="color: #888;">Feb 28, 2024</span>
+                    </div>
+                    <div style="color: #FACC15; margin-bottom: 1rem;">★★★★★</div>
+                    <h4 style="margin-bottom: 0.5rem;">Fast shipping & Great support</h4>
+                    <p style="color: var(--text-muted);">Received my mat in 3 days. The sustainability mission was what sold me, and the product exceeded expectations.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="cta-button secondary-button">Write a Review</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center; padding: 40px;">
+            &copy; 2024 ZenSpace Inc.
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        function switchImage(thumb, src) {
+            document.getElementById('main-image-preview').style.backgroundImage = `url('${src}')`;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+
+        // Sticky CTA logic
+        window.addEventListener('scroll', () => {
+            const addToCartBtn = document.querySelector('.product-details .cta-button');
+            const stickyBar = document.getElementById('sticky-bar');
+            const btnPos = addToCartBtn.getBoundingClientRect().bottom;
+
+            if (btnPos < 0) {
+                stickyBar.classList.add('visible');
+            } else {
+                stickyBar.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
